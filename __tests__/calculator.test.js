@@ -6,7 +6,8 @@ describe('haikuChecker', () => {
     expect(typeof haikuChecker()).toEqual('boolean');
   });
 
-  test('should correctly identify when a poem has three lines', () => {
-    expect(typeof haikuChecker()).toEqual('boolean');
+  test('should correctly identify a three-line poem', () => {
+    const poem = 'Tedious mountain\nAn amazing zebra flies\nin spite of the rat'
+    expect(haikuChecker(poem)).toEqual(true);
   });
 })
