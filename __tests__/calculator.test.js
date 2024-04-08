@@ -10,4 +10,8 @@ describe('haikuChecker', () => {
     const poem = 'Tedious mountain\nAn amazing zebra flies\nin spite of the rat'
     expect(haikuChecker(poem)).toEqual(true);
   });
+
+  test('should correctly identify the number of vowels in a word', () => {
+    expect(haikuChecker('tedious').toEqual(4))
+  })
 })
