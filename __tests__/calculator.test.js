@@ -20,4 +20,9 @@ describe('haikuChecker', () => {
     haikuChecker('');
     expect(haikuChecker.syllableChecker('sure')).toEqual(1);
   });
+
+  test('should count two-vowel diphthongs as one vowel', () => {
+    haikuChecker('');
+    expect(haikuChecker.syllableChecker('tedious')).toEqual(3);
+  });
 })
