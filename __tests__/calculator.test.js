@@ -8,10 +8,13 @@ describe('haikuChecker', () => {
 
   test('should correctly identify a three-line poem', () => {
     const poem = 'Tedious mountain\nAn amazing zebra flies\nin spite of the rat'
+    // const checkHaiku = haikuChecker(poem);
+    // haikuChecker(poem);
     expect(haikuChecker(poem)).toEqual(true);
   });
 
-  test('should correctly identify the number of vowels in a word', () => {
-    expect(haikuChecker('tedious').toEqual(4))
-  })
+  test('should correctly count the number of vowels in a word', () => {
+    haikuChecker('');
+    expect(haikuChecker.syllableChecker('tedious')).toEqual(4);
+  });
 })
