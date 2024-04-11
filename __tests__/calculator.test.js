@@ -30,4 +30,8 @@ describe('haikuChecker', () => {
     haikuChecker('');
     expect(haikuChecker.lineSyllableChecker('Tedious mountain')).toEqual(5);
   });
+
+  test('should correctly identify a haiku', () => {
+    expect(haikuChecker('Tedious mountain\nAn amazing zebra flies\nin spite of the rat')).toEqual(true);
+  });
 })
