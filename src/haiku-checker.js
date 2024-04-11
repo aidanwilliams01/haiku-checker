@@ -1,12 +1,30 @@
 export function haikuChecker(poem) {
+
   haikuChecker.syllableChecker = syllableChecker;
+  haikuChecker.lineSyllableChecker = lineSyllableChecker;
+
   const lines = poem.split('\n').length;
-  // console.log(poem.split('\n'));
+  // const lineArray = line.split(' ');
+  let i = 0;
+  let lineSyllables = 0;
+  
   if (lines === 3) {
     return true;
   }
   else {
     return false;
+  }
+
+  function lineSyllableChecker(line) {
+    const lineArray = line.split(' ');
+    if (i === lineArray.length) {
+      i = 0;
+      return lineSyllables;
+    }
+    const wordSyllables = syllableChecker(lineArray[i]);
+    lineSyllables += wordSyllables;
+    i += 1;
+    return lineSyllableChecker(line);
   }
 
   function syllableChecker(word) {

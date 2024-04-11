@@ -25,4 +25,9 @@ describe('haikuChecker', () => {
     haikuChecker('');
     expect(haikuChecker.syllableChecker('coin')).toEqual(1);
   });
+
+  test('should correctly count the number of syllables per line', () => {
+    haikuChecker('');
+    expect(haikuChecker.lineSyllableChecker('Tedious mountain')).toEqual(5);
+  });
 })
