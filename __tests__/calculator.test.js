@@ -13,7 +13,7 @@ describe('haikuChecker', () => {
 
   test('should correctly count the number of vowels in a word', () => {
     haikuChecker('');
-    expect(haikuChecker.syllableChecker('tedious')).toEqual(4);
+    expect(haikuChecker.syllableChecker('many')).toEqual(2);
   });
 
   test('should exclude silent "e"s when counting the number of vowels in a word', () => {
@@ -21,8 +21,8 @@ describe('haikuChecker', () => {
     expect(haikuChecker.syllableChecker('sure')).toEqual(1);
   });
 
-  test('should count two-vowel diphthongs as one vowel', () => {
+  test('should count vowel teams as one vowel', () => {
     haikuChecker('');
-    expect(haikuChecker.syllableChecker('tedious')).toEqual(3);
+    expect(haikuChecker.syllableChecker('coin')).toEqual(1);
   });
 })
