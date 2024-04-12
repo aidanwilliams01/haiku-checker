@@ -1,6 +1,4 @@
-# (Application Name)
-
-#### (Brief Description of Application)
+# Haiku Checker
 
 #### By Aidan Williams
 
@@ -17,13 +15,11 @@
 
 ## Description
 
+A tool to check whether or not a poem is a haiku.
+
 ## Setup/Installation Requirements
 
 * _Clone this repository to your desktop._
-* _Create a file named '.env' in the top level of the directory._
-* _Sign in or create an account at [url here]._
-* _Copy the API key at [url here] and place it in your .env file using the following format (without brackets):_ 
-  * _`API_KEY=[your API key here]`_
 * _Run the following commands in the top level of the directory._
   * _`$ npm install` to install packages_
   * _`$ npm run build` to build the project using webpack_
@@ -32,14 +28,14 @@
 * Other commands:
   * _To build the project and start a development server, run `$ npm run start`._
   * _To lint Javascript files, run `$ npm run lint`._
+  * _To view code testing with Jest, run `$ npm run test`._
 
 ## Known Bugs
 
-* _Any known issues_
-* _should go here_
+* _This tool may not work in all cases due to syllable rule exceptions._
 
 ## License
 
 _[GPL](https://en.wikipedia.org/wiki/GNU_General_Public_License)_
 
-Copyright (c) _2023_ _Aidan Williams_
+Copyright (c) _2024_ _Aidan Williams_
