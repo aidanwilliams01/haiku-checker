@@ -3,13 +3,19 @@ export function haikuChecker(poem) {
   haikuChecker.syllableChecker = syllableChecker;
   haikuChecker.lineSyllableChecker = lineSyllableChecker;
 
-  const lines = poem.split('\n').length;
-  // const lineArray = line.split(' ');
+  const poemArray = poem.split('\n');
+  const lines = poemArray.length;
   let i = 0;
   let lineSyllables = 0;
-  
+  // const lineArray = line.split(' ');
+
   if (lines === 3) {
-    return true;
+    if (lineSyllableChecker(poemArray[0]) === 5 && lineSyllableChecker(poemArray[1]) === 7 && lineSyllableChecker(poemArray[2]) === 5) {
+      return true;
+    }
+    else {
+      return false;
+    }
   }
   else {
     return false;
@@ -18,8 +24,10 @@ export function haikuChecker(poem) {
   function lineSyllableChecker(line) {
     const lineArray = line.split(' ');
     if (i === lineArray.length) {
+      const thisLineSyllables = lineSyllables;
+      lineSyllables = 0;
       i = 0;
-      return lineSyllables;
+      return thisLineSyllables;
     }
     const wordSyllables = syllableChecker(lineArray[i]);
     lineSyllables += wordSyllables;
@@ -30,6 +38,7 @@ export function haikuChecker(poem) {
   function syllableChecker(word) {
     // add vowel exceptions
 
+    word = word.toLowerCase();
     let i = 0;
     let wordArray = word.split('');
 
@@ -70,7 +79,12 @@ export function haikuChecker(poem) {
     if (wordArray[wordArray.length - 1] === 'e') {
       const newWordArray = wordArray.slice(0, wordArray.length - 1);
       const vowels = newWordArray.filter(e => e === 'a' || e === 'e' || e === 'i' || e === 'o' || e === 'u' || e === 'y');
-      return vowels.length;
+      if (vowels.length === 0) {
+        return 1;
+      }
+      else {
+        return vowels.length;
+      }
     }
     else {
       const vowels = wordArray.filter(e => e === 'a' || e === 'e' || e === 'i' || e === 'o' || e === 'u' || e === 'y');
