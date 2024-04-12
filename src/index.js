@@ -1,18 +1,21 @@
-// import Triangle from './js/triangle.js';
-// import Rectangle from './js/rectangle.js';
+import { haikuChecker } from './haiku-checker';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 
-function handleTriangleForm() {
+function handleForm() {
   event.preventDefault();
-}
-
-function handleRectangleForm() {
-  event.preventDefault();
+  const poem = document.querySelector("textarea").value;
+  const isHaiku = haikuChecker(poem);
+  if (isHaiku === true) {
+    document.querySelector("p").innerText = 'This poem is a haiku.';
+  }
+  else {
+    document.querySelector("p").innerText = 'This poem is not a haiku.';
+  }
+  
 }
 
 window.addEventListener("load", function() {
-  document.querySelector("#triangle-checker-form").addEventListener("submit", handleTriangleForm);
-  this.document.querySelector("#rectangle-area-form").addEventListener("submit", handleRectangleForm);
+  document.querySelector("form").addEventListener("submit", handleForm);
 });
